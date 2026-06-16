@@ -3,8 +3,8 @@ package com.example.blog_app.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.management.relation.Role;
 import java.util.List;
+import com.example.blog_app.entity.Role;
 
 @Data
 @Entity
@@ -28,9 +28,9 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Post> posts;
 
-    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Comment> comments;
 }
